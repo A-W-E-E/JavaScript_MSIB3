@@ -1,0 +1,78 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+<h2 align="center">Info Gempa</h2>
+		<table align="center" cellpadding="" width="80%" border="1px">
+			<thead>
+				<tr bgcolor="tomato">
+					<th>NO</th>
+					<th>LOKASI</th>
+					<th>SKALA</th>
+                    <th>DAMPAK</th>
+				</tr>
+			</thead>
+<tbody>
+    
+<script>
+
+    let no =1;
+    
+    class Gempa{
+        constructor(lokasi,skala){
+            this.lok = lokasi;
+            this.skala = skala;
+
+        }
+
+   
+
+    getDampak(){
+        if(this.skala <= 2 ) this.dampak = 'Tidak terasa';
+        else if(this.skala > 2 && this.skala <= 4 ) this.dampak = 'Bangunan retak-retak';
+        else if(this.skala > 4 && this.skala <= 6 ) this.dampak = 'Bangunan Roboh';
+        else if(this.skala > 6 ) this.dampak = 'Bangunan Roboh dan Berpotensi tsunami';
+        else this.dampak = '';
+
+        return this.dampak;
+    }
+
+    Info_Gempa(){
+       
+        document.write(`
+        <tr > 
+            <td>${no++} </td>
+            <td>${this.lok} </td>
+            <td>${this.skala} skala richter</td>
+            <td>${this.getDampak()} </td>
+        </tr>`);
+    }
+}
+
+    
+
+    g1 = new Gempa('Jepang',9);
+    g2 = new Gempa('Australia',2);
+    g3 = new Gempa('Iran',4.5);
+    g4 = new Gempa('Turki',3.7);
+    g5 = new Gempa('Peru',7);
+    g6 = new Gempa('Amerika',6.4);
+    g7 = new Gempa('Italia',4);
+    g8 = new Gempa('Malaysia',8.1);
+    g9 = new Gempa('Taiwan', 6.8);
+    g10 = new Gempa('China',5);
+    g1.Info_Gempa();
+    g2.Info_Gempa();
+    g3.Info_Gempa();
+    g4.Info_Gempa();
+    g5.Info_Gempa();
+    g6.Info_Gempa();
+    g7.Info_Gempa();
+    g8.Info_Gempa();
+    g9.Info_Gempa();
+    g10.Info_Gempa();
+    
+
+</script>
+</tbody>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+ 
